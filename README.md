@@ -1,70 +1,118 @@
-# SWYNEX – Data Cleaning & Preparation
+# SWYNEX - Data Clean Preparation
 
 ## 📌 Project Overview
 
-This project focuses on cleaning, preparing, and analyzing a raw dataset using **Microsoft Excel**. The project identifies data-quality issues and uses Pivot Tables to analyze the cleaned data by **month and sector**.
+**SWYNEX - Data Clean Preparation** is an Excel-based data cleaning and preparation project focused on identifying and correcting common data-quality issues in a raw dataset.
 
-## 🛠️ Tool Used
+The project uses **Microsoft Excel and VBA macros** to automate data cleaning, validation, standardization, and basic analysis while preserving the original raw data for comparison.
+
+## 🛠️ Tools Used
 
 * Microsoft Excel
+* VBA (Visual Basic for Applications)
+* Pivot Tables
+* Excel Charts
 
 ## 📂 Project Structure
 
 ```text
-SWYNEX-Data-Cleaning-Preparation/
+SWYNEX-Data-Clean-Preparation/
 │
-├── Data Quality
-│   └── Data quality checks and cleaning
-│
-├── Pivot Table by Month
-│   └── Monthly analysis of the cleaned data
-│
-├── Pivot Table by Sector
-│   └── Sector-wise analysis of the cleaned data
-│
+├── Raw_Data
+├── Cleaned_Data
+├── Data_Quality
+├── Pivot_Table_Month
+├── Pivot_Table_Sector
 ├── Summary
-│   └── Key findings and observations
-│
 └── README.md
 ```
 
-## 🧹 Data Quality
+## 🧹 Data Cleaning & Preparation
 
-The raw dataset was checked for common data-quality issues, including:
+### 1. Missing Values
 
-* Missing values
-* Duplicate records
-* Incorrect data types
-* Inconsistent values
-* Formatting inconsistencies
+Used VBA to identify and count missing values across columns and record the results for data-quality review.
 
-The identified issues were cleaned and standardized using Excel.
+### 2. Duplicate Records
 
-## 📊 Pivot Table Analysis
+Used a VBA-based duplicate detection approach to identify exact duplicate records and remove duplicate rows while maintaining a record of the cleaning process.
+
+### 3. Text Standardization
+
+Standardized inconsistent values in fields such as:
+
+* City
+* Gender
+* Employment Type
+* AI Adoption Level
+
+VBA was used to trim unnecessary spaces and map inconsistent entries to standardized values.
+
+### 4. Date Standardization
+
+Converted inconsistent date/text entries into proper Excel dates and applied a consistent date format.
+
+### 5. Numeric Data Cleaning
+
+Cleaned fields such as:
+
+* Monthly Income (INR)
+* Working Hours per Week
+
+Removed symbols, commas, and unnecessary text before converting the values into proper numeric format.
+
+### 6. Outlier Detection
+
+Used logical boundaries to identify unusual values in:
+
+* Age
+* Working Hours per Week
+* Job Security Score
+
+Outliers were **flagged for review instead of automatically deleted**.
+
+### 7. Impossible Value Detection
+
+Validated fields such as:
+
+* CPI Inflation %
+* UPI Transactions per Month
+
+Values outside the defined logical range were flagged for further review.
+
+### 8. Cleaned Dataset
+
+The cleaned and validated records were stored separately from the raw dataset.
+
+This preserves the original data and makes the cleaning process easier to audit and compare.
+
+## 📊 Analysis
 
 ### Monthly Analysis
 
-A Pivot Table was created to analyze the data by **month** and identify monthly patterns and performance.
+Created a Pivot Table to analyze patterns and aggregated results by month.
 
 ### Sector Analysis
 
-A Pivot Table was created to analyze the data by **sector** and compare performance across different sectors.
+Created a Pivot Table to compare data across different sectors.
 
-## 📈 Summary
+### Summary
 
-The cleaned dataset was used to generate summarized insights through Pivot Tables. The analysis helps understand **monthly trends and sector-wise performance** and provides a structured dataset for further analysis.
+Prepared a summary of the major data-quality findings and cleaned dataset.
 
-## 🎯 Key Skills Demonstrated
+## 📈 Key Data Quality Checks
 
-* Data Cleaning
-* Data Quality Checking
-* Excel Pivot Tables
-* Data Analysis
-* Data Validation
-* Summary & Reporting
+The project covers:
 
-## 👩‍💻 Author
+* Missing values
+* Duplicate records
+* Inconsistent text values
+* Incorrect date formats
+* Numeric values stored as text
+* Outliers
+* Impossible values
+* Data validation
 
-**Priyanka Baderia**
+## 🎯 Project Objective
 
-Aspiring Data Analyst
+The main objective was to transform a **messy raw dataset into a structured, standardized, and analysis-ready dataset using Excel and VBA**, while maintaining data integrity and traceability throughout the cleaning process.
